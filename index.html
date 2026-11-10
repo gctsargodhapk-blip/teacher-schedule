@@ -4,9 +4,9 @@
 <meta name="theme-color" content="#0d3b40"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
 <title>Teaching schedule</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f2f5f2;--card:#fff;--ink:#112420;--mute:#5b6e68;--line:#d9e2dd;--hero:#0d3b40;--acc:#0d5c63;--accfg:#fff;--p:#d9670b;--pt:#fff1e2;--t:#2459c7;--tt:#e6eefc;--u:#1d8a5d;--ut:#e0f4ea;--bad:#c0392b;--x:#7a3fd1;--xt:#f0e8ff}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a;--x:#c9a7ff;--xt:#2b2140}}
-:root[data-theme="dark"]{--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a;--x:#c9a7ff;--xt:#2b2140}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f2f5f2;--card:#fff;--ink:#112420;--mute:#5b6e68;--line:#d9e2dd;--hero:#0d3b40;--acc:#0d5c63;--accfg:#fff;--p:#d9670b;--pt:#fff1e2;--t:#2459c7;--tt:#e6eefc;--u:#1d8a5d;--ut:#e0f4ea;--bad:#c0392b;--x:#7a3fd1;--xt:#f0e8ff;--done:#17704b}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a;--x:#c9a7ff;--xt:#2b2140;--done:#1b5a3f}}
+:root[data-theme="dark"]{--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a;--x:#c9a7ff;--xt:#2b2140;--done:#1b5a3f}
 html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
@@ -66,6 +66,7 @@ nav svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stro
 #sheet h2{margin:0 0 4px}
 .cls{cursor:pointer}.cls.sk{opacity:.5}.cls.sk .nm{text-decoration:line-through}.tm b{font-size:1.08rem}.mr{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1.5fr;gap:4px;padding:9px 2px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;font-size:.92rem}.mr.h{color:var(--mute);font-size:.8rem;font-weight:700}.mr span:last-child{text-align:right;font-weight:700}#act{padding:18px 16px calc(20px + env(safe-area-inset-bottom,0px))}#act h2{margin:0 0 8px}
 .cls.ex{border-left-color:var(--x);background:var(--xt);border-style:dashed;border-left-style:solid}.cls.ex .ty{color:var(--x)}.item.ex{border-left:6px solid var(--x)}.tile.X b{color:var(--x)}.pw{display:grid;grid-template-columns:40px 90px 1fr;gap:8px;align-items:center;margin-top:6px}.pw input{margin:0}.pw span{color:var(--mute);font-variant-numeric:tabular-nums}.fillr{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}.fillr input{width:100px;margin:0}.fillr .btn{margin:0;padding:0 12px}
+.hero.done{background:var(--done)}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:no-preference){#sheet{animation:up .22s ease-out}@keyframes up{from{transform:translateY(40px);opacity:.4}}}
 @media print{nav,#earn,.noprint,#sheet,#scrim,#act{display:none!important}section:not(.pr){display:none!important}section.pr{display:block!important}body{background:#fff;color:#000}main{padding:0}.cls,.tile{background:#fff!important;border-color:#000;break-inside:avoid}}
@@ -160,7 +161,7 @@ if(!all.length)return `<div class="hero"><small>${WD[cur.getDay()]}</small><div 
 const cu=all.find(x=>x.st<=n&&n<x.en),nx=all.find(x=>x.st>n);
 if(cu)return `<div class="hero"><small>Now</small><div class="big">${nm(cu)}</div><div class="sm">${esc(cu.c.ve)} · ends ${fm(cu.en)} · ${hm(n-cu.st)} elapsed, ${hm(cu.en-n)} left</div><div class="bar"><i style="width:${Math.round((n-cu.st)/cu.du*100)}%"></i></div>${nx?`<div class="sm nx">Next: ${nm(nx)} at ${fm(nx.st)}</div>`:""}</div>`;
 if(nx)return `<div class="hero"><small>Next class in ${hm(nx.st-n)}</small><div class="big">${nm(nx)}</div><div class="sm">${fm(nx.st)}${nx.c.ve?" · "+esc(nx.c.ve):""}</div></div>`;
-return `<div class="hero"><small>${WD[cur.getDay()]}</small><div class="big">Classes are over for today</div></div>`}
+return `<div class="hero done"><small>✓ ${WD[cur.getDay()]}</small><div class="big">Classes are over for today</div></div>`}
 const rate=k=>{const v=S.set["r"+k];return v==null?({T:800,P:400,U:0})[k]:+v},money=t=>t.T*rate("T")+t.P*rate("P")+t.U*rate("U"),rs=n=>"Rs "+Math.round(n).toLocaleString("en-US");
 const days=(a,n)=>Array.from({length:n},(_,i)=>addD(a,i)),dim=d=>new Date(d.getFullYear(),d.getMonth()+1,0).getDate();
 function tally(ds){const t={T:0,P:0,U:0,x:0};ds.forEach(d=>[1,2].forEach(s=>list(d.getDay(),s,iso(d)).forEach(x=>{const p=per(x);if(x.c.dt)t.x+=p;else t[x.c.ty]+=p})));return t}
