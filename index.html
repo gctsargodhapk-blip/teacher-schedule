@@ -4,9 +4,9 @@
 <meta name="theme-color" content="#0d3b40"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
 <title>Teaching schedule</title>
 <style>
-:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f2f5f2;--card:#fff;--ink:#112420;--mute:#5b6e68;--line:#d9e2dd;--hero:#0d3b40;--acc:#0d5c63;--accfg:#fff;--p:#d9670b;--pt:#fff1e2;--t:#2459c7;--tt:#e6eefc;--u:#1d8a5d;--ut:#e0f4ea;--bad:#c0392b}
-@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a}}
-:root[data-theme="dark"]{--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a}
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#f2f5f2;--card:#fff;--ink:#112420;--mute:#5b6e68;--line:#d9e2dd;--hero:#0d3b40;--acc:#0d5c63;--accfg:#fff;--p:#d9670b;--pt:#fff1e2;--t:#2459c7;--tt:#e6eefc;--u:#1d8a5d;--ut:#e0f4ea;--bad:#c0392b;--x:#7a3fd1;--xt:#f0e8ff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a;--x:#c9a7ff;--xt:#2b2140}}
+:root[data-theme="dark"]{--bg:#0a1614;--card:#12201d;--ink:#e6f1ee;--mute:#93aaa4;--line:#22362f;--hero:#16474b;--acc:#7fd6d9;--accfg:#0a1614;--p:#f4a05a;--pt:#32241a;--t:#8db4ff;--tt:#17284a;--u:#63d6a1;--ut:#16332a;--bad:#ff8a7a;--x:#c9a7ff;--xt:#2b2140}
 html{scroll-padding-top:env(safe-area-inset-top,0px);-webkit-text-size-adjust:100%}
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.4 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
@@ -65,6 +65,7 @@ nav svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stro
 #sheet,#act{position:fixed;left:0;right:0;bottom:0;z-index:31;max-width:640px;margin:0 auto;max-height:90%;overflow:auto;background:var(--card);border-radius:24px 24px 0 0;padding:18px 16px calc(20px + env(safe-area-inset-bottom,0px))}
 #sheet h2{margin:0 0 4px}
 .cls{cursor:pointer}.cls.sk{opacity:.5}.cls.sk .nm{text-decoration:line-through}.tm b{font-size:1.08rem}.mr{display:grid;grid-template-columns:1.2fr 1fr 1fr 1fr 1.5fr;gap:4px;padding:9px 2px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums;font-size:.92rem}.mr.h{color:var(--mute);font-size:.8rem;font-weight:700}.mr span:last-child{text-align:right;font-weight:700}#act{padding:18px 16px calc(20px + env(safe-area-inset-bottom,0px))}#act h2{margin:0 0 8px}
+.cls.ex{border-left-color:var(--x);background:var(--xt);border-style:dashed;border-left-style:solid}.cls.ex .ty{color:var(--x)}.item.ex{border-left:6px solid var(--x)}.tile.X b{color:var(--x)}.pw{display:grid;grid-template-columns:40px 90px 1fr;gap:8px;align-items:center;margin-top:6px}.pw input{margin:0}.pw span{color:var(--mute);font-variant-numeric:tabular-nums}.fillr{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:10px}.fillr input{width:100px;margin:0}.fillr .btn{margin:0;padding:0 12px}
 [hidden]{display:none!important}
 @media (prefers-reduced-motion:no-preference){#sheet{animation:up .22s ease-out}@keyframes up{from{transform:translateY(40px);opacity:.4}}}
 @media print{nav,#earn,.noprint,#sheet,#scrim,#act{display:none!important}section:not(.pr){display:none!important}section.pr{display:block!important}body{background:#fff;color:#000}main{padding:0}.cls,.tile{background:#fff!important;border-color:#000;break-inside:avoid}}
@@ -83,13 +84,11 @@ nav svg{width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stro
 </section>
 
 <section id="v-set" hidden>
-<div class="card"><b class="h">Timings</b>
-<div class="row"><label>Shift 1 starts<input id="s1" type="time"></label><label>Shift 2 starts<input id="s2" type="time"></label></div>
-<div class="row"><label>First lectures (how many)<input id="kk" type="number" inputmode="numeric" min="0" step="1"></label><label>Their length, minutes<input id="l1" type="number" inputmode="numeric" min="5" step="1"></label></div>
-<div class="row"><label>Other lectures, minutes<input id="pm" type="number" inputmode="numeric" min="5" step="1"></label><label>Periods per shift<input id="pps" type="number" inputmode="numeric" min="1" step="1"></label></div>
+<div class="card"><b class="h">Class timings</b><div id="tmgr"></div></div>
+<div class="card"><b class="h">Pay rates</b>
 <div class="row"><label>Theory rate per period (Rs)<input id="rtT" type="number" inputmode="numeric" min="0" step="50"></label><label>Lab rate per period (Rs)<input id="rtP" type="number" inputmode="numeric" min="0" step="50"></label></div>
 <label>Tutorial rate per period (Rs)<input id="rtU" type="number" inputmode="numeric" min="0" step="50"></label>
-<p class="note">Changing the timings moves every class that uses period numbers. Classes where you set an exact start time or minutes keep their own values. Rates are used for the earning bar at the bottom.</p></div>
+<p class="note">Rates are per lecture period and are used for the earning bar at the bottom.</p></div>
 <div class="card"><b class="h">Cloud sync</b><p class="note">Saves your schedule to your own Google Sheet, so changes stay safe and show on every device. <b id="sst"></b></p><label>Web app URL<input id="cu" placeholder="https://script.google.com/macros/s/…/exec"></label><label>Key<input id="ck"></label><button class="btn pri" id="cs">Save and sync now</button></div>
 <div class="card"><b class="h">Backup and restore</b>
 <p class="note">Your schedule lives on this device and works without internet. Copy a backup before clearing browser data or changing phones.</p>
@@ -132,9 +131,9 @@ const SAMPLE=[[1,1,1,1,"T","ET-212","Mech SMB","FDY Shop"],[1,1,2,3,"P","ET-212"
 [5,1,1,3,"P","ET-273","Elec SEB","B Lab"],[5,1,4,3,"P","ET-253","Elec SEA","B-1"],[5,2,4,3,"P","ET-345","TEC","W/L"],
 [6,1,1,3,"P","ET-212","Mech SMA","ET Dept B-1"],[6,1,4,1,"T","ET-212","Mech SMA","Autocad MT"],[6,1,5,1,"T","ET-273","Elec SEA","Comp Lab ET"],[6,1,6,1,"T","ET-253","Elec SEB","A-2"],[6,2,1,1,"T","ET-143","FEC","W/L"],[6,2,2,3,"P","ET-143","FEC","W/L"]];
 const mk=(a,i)=>({id:"c"+i+Math.random().toString(36).slice(2,7),d:a[0],sh:a[1],p:a[2],n:a[3],ty:a[4],co:a[5],cl:a[6],ve:a[7],at:"",du:0});
-const fresh=()=>({set:{s1:"08:00",s2:"13:15",pm:35,l1:40,k:4,pps:8,v:2},cls:SAMPLE.map(mk)});
+const fresh=()=>({set:{s1:"08:00",e1:"13:00",s2:"13:15",e2:"18:15",v:3},pl:{1:[45,45,45,45,45,45,45,45],2:[40,40,40,40,35,35,35,35]},cls:SAMPLE.map(mk)});
 function load(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):null}catch(e){return null}}
-function migrate(){if((S.set.v||0)<2){Object.assign(S.set,{s1:"08:00",s2:"13:15",pm:35,l1:40,k:4,pps:S.set.pps||8,v:2});save()}}
+function migrate(){if((S.set.v||0)<3){Object.assign(S.set,{s1:"08:00",e1:"13:00",s2:"13:15",e2:"18:15",v:3});S.pl={1:[45,45,45,45,45,45,45,45],2:[40,40,40,40,35,35,35,35]};save()}}
 function store(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
 function save(){S.ts=Date.now();store();push()}
 const SY=()=>{try{return JSON.parse(localStorage.getItem("gct-sync")||"{}")}catch(e){return{}}},stat=t=>{const e=document.getElementById("sst");if(e)e.textContent=t};
@@ -147,15 +146,15 @@ const tm=s=>{const a=(s||"0:0").split(":");return +a[0]*60+ +a[1]};
 const fm=m=>{m=Math.round(m);let h=Math.floor(m/60)%24,mi=m%60,ap=h>=12?"PM":"AM";h=h%12||12;return h+":"+String(mi).padStart(2,"0")+" "+ap};
 const rd=n=>Math.round(n*10)/10,nowMin=()=>{const d=new Date();return d.getHours()*60+d.getMinutes()};
 const hm=m=>{m=Math.max(0,Math.round(m));return m>=60?Math.floor(m/60)+" h"+(m%60?" "+m%60+" min":""):m+" min"};
-const plen=p=>p<=+(S.set.k==null?4:S.set.k)?+(S.set.l1||S.set.pm):+S.set.pm;
-const poff=p=>{let t=0;for(let i=1;i<p;i++)t+=plen(i);return t};
-function span(c){const st=c.at?tm(c.at):tm(S.set["s"+c.sh])+poff(c.p);let du=+c.du;if(!(du>0)){du=0;let r=+c.n,i=+c.p;while(r>0){const f=Math.min(1,r);du+=f*plen(i);r-=f;i++}}return{st:st,en:st+du,du:du}}
-const per=x=>x.c.du>0?x.du/S.set.pm:+x.c.n;
+const plen=(sh,p)=>{const a=(S.pl&&S.pl[sh])||[];return +(a[p-1]!=null?a[p-1]:(a.length?a[a.length-1]:45))};
+const poff=(sh,p)=>{let t=0;for(let i=1;i<p;i++)t+=plen(sh,i);return t};
+function span(c){const st=c.at?tm(c.at):tm(S.set["s"+c.sh])+poff(c.sh,c.p);let du=+c.du;if(!(du>0)){du=0;let r=+c.n,i=+c.p;while(r>0){const f=Math.min(1,r);du+=f*plen(c.sh,i);r-=f;i++}}return{st:st,en:st+du,du:du}}
+const per=x=>x.c.du>0?x.du/plen(x.c.sh,x.c.p):+x.c.n;
 const skipped=(c,dt)=>!c.dt&&!!((S.off||{})[dt]||(S.skip||{})[c.id+"|"+dt]);
 const list=(d,sh,dt,all)=>S.cls.filter(c=>(c.dt?c.dt===dt:c.d==d)&&c.sh==sh&&(all||!skipped(c,dt))).map(c=>Object.assign({c:c,sk:skipped(c,dt)},span(c))).sort((a,b)=>a.st-b.st);
 function card(x,clash,dt){const c=x.c,n=nowMin(),live=dt===iso(new Date())&&!x.sk&&x.st<=n&&n<x.en,p=rd(per(x));
-return `<article class="cls ${c.ty}${live?" now":""}${clash?" clash":""}${x.sk?" sk":""}" data-id="${c.id}" data-dt="${dt}"><div class="tm"><b>${fm(x.st)}</b><span>${fm(x.en)}</span></div><div><div class="nm">${esc(c.co)} <em>${esc(c.cl)}</em></div><div class="mt"><span class="ty">${TN[c.ty]}</span>${c.dt?`<span class="ty">Extra class</span>`:""}${c.ve?`<span>${esc(c.ve)}</span>`:""}<span>${p} ${p==1?"period":"periods"} (${hm(x.du)})</span>${live?`<span class="ty">Now</span>`:""}${x.sk?`<span class="ty">Skipped</span>`:""}${clash?`<span class="ty">Overlaps previous class</span>`:""}</div></div></article>`}
-function shift(D,sh){const ss=tm(S.set["s"+sh]),se=ss+poff(+S.set.pps+1),L=list(D.getDay(),sh,iso(D),true);let h=`<h3>Shift ${sh} <span>${fm(ss)} – ${fm(se)}</span></h3>`;if(!L.length)return h+`<p class="empty">No classes in this shift.</p>`;let pe=ss;for(const x of L){if(!x.sk&&x.st-pe>=1)h+=`<div class="gap">Free for ${hm(rd(x.st-pe))}</div>`;h+=card(x,!x.sk&&x.st<pe,iso(D));if(!x.sk)pe=Math.max(pe,x.en)}return h}
+return `<article class="cls ${c.ty}${live?" now":""}${clash?" clash":""}${x.sk?" sk":""}${c.dt?" ex":""}" data-id="${c.id}" data-dt="${dt}"><div class="tm"><b>${fm(x.st)}</b><span>${fm(x.en)}</span></div><div><div class="nm">${esc(c.co)} <em>${esc(c.cl)}</em></div><div class="mt"><span class="ty">${TN[c.ty]}</span>${c.dt?`<span class="ty">Extra class</span>`:""}${c.ve?`<span>${esc(c.ve)}</span>`:""}<span>${p} ${p==1?"period":"periods"} (${hm(x.du)})</span>${live?`<span class="ty">Now</span>`:""}${x.sk?`<span class="ty">Skipped</span>`:""}${clash?`<span class="ty">Overlaps previous class</span>`:""}</div></div></article>`}
+function shift(D,sh){const ss=tm(S.set["s"+sh]),se=S.set["e"+sh]?tm(S.set["e"+sh]):ss+poff(sh,((S.pl||{})[sh]||[]).length+1),L=list(D.getDay(),sh,iso(D),true);let h=`<h3>Shift ${sh} <span>${fm(ss)} – ${fm(se)}</span></h3>`;if(!L.length)return h+`<p class="empty">No classes in this shift.</p>`;let pe=ss;for(const x of L){if(!x.sk&&x.st-pe>=1)h+=`<div class="gap">Free for ${hm(rd(x.st-pe))}</div>`;h+=card(x,!x.sk&&x.st<pe,iso(D));if(!x.sk)pe=Math.max(pe,x.en)}return h}
 function hero(){if(iso(cur)!==iso(new Date()))return "";const n=nowMin(),all=[1,2].flatMap(s=>list(cur.getDay(),s,iso(cur))).sort((a,b)=>a.st-b.st),nm=x=>esc(x.c.co)+" "+esc(x.c.cl);
 if(!all.length)return `<div class="hero"><small>${WD[cur.getDay()]}</small><div class="big">No classes today</div></div>`;
 const cu=all.find(x=>x.st<=n&&n<x.en),nx=all.find(x=>x.st>n);
@@ -168,8 +167,10 @@ function tally(ds){const t={T:0,P:0,U:0,x:0};ds.forEach(d=>[1,2].forEach(s=>list
 function showEarn(){const m=tab==="month",w=tab==="week",e=$("earn");e.hidden=!(tab==="today"||w||m);if(e.hidden)return;
 const t=tally(m?days(mcur,dim(mcur)):w?days(mon(cur),7):[cur]),lbl=m?mcur.toLocaleDateString("en-GB",{month:"long"}):w?"This week":(iso(cur)===iso(new Date())?"Today":cur.toLocaleDateString("en-GB",{day:"numeric",month:"short"}));
 e.innerHTML=`<div class="ea"><div><small>${lbl}, total earning</small><div class="big">${rs(money(t))}</div></div><div class="det">${rd(t.T)} theory \u00d7 ${rate("T")}<br>${rd(t.P)} lab \u00d7 ${rate("P")}${t.U&&rate("U")?`<br>${rd(t.U)} tutorial \u00d7 ${rate("U")}`:""}${t.x?`<br>+ ${rd(t.x)} extra, not paid here`:""}</div></div>`}
+function tmgr(){$("tmgr").innerHTML=[1,2].map(sh=>{const a=S.pl[sh]||[];let t=tm(S.set["s"+sh]);const rows=a.map((m,i)=>{const b=t;t+=m;return `<div class="pw"><b>P${i+1}</b><input type="number" inputmode="numeric" min="5" value="${m}" data-pl="${sh}:${i}"><span>${fm(b)} \u2013 ${fm(t)}</span></div>`}).join("");
+return `<h3>Shift ${sh}<span>${fm(tm(S.set["s"+sh]))} \u2013 ${fm(tm(S.set["e"+sh]))}</span></h3><div class="row"><label>Starts<input type="time" value="${S.set["s"+sh]}" data-t="s${sh}"></label><label>Ends<input type="time" value="${S.set["e"+sh]}" data-t="e${sh}"></label></div><label>Length of each lecture, in minutes</label>${rows}${t>tm(S.set["e"+sh])?`<p class="note">Lectures run until ${fm(t)}, after the shift end.</p>`:""}<div class="fillr"><input id="fill${sh}" type="number" inputmode="numeric" placeholder="Minutes"><button class="btn" data-fill="${sh}">Set all</button><button class="btn" data-addp="${sh}">+ Lecture</button><button class="btn del" data-rmp="${sh}">\u2212 Last</button></div>`}).join("")}
 function monthR(){const ds=days(mcur,dim(mcur)),ms=tally(ds);$("mlbl").textContent=mcur.toLocaleDateString("en-GB",{month:"long",year:"numeric"});
-$("mt").innerHTML=[["T","Theory",ms.T],["P","Lab",ms.P],["U","Extra",ms.x]].map(a=>`<div class="tile ${a[0]}"><b>${rd(a[2])}</b><span>${a[1]}</span></div>`).join("");
+$("mt").innerHTML=[["T","Theory",ms.T],["P","Lab",ms.P],["X","Extra",ms.x]].map(a=>`<div class="tile ${a[0]}"><b>${rd(a[2])}</b><span>${a[1]}</span></div>`).join("");
 $("mrows").innerHTML=ds.map(d=>{const t=tally([d]),off=(S.off||{})[iso(d)];if(!(t.T+t.P+t.U+t.x)&&!off)return "";return `<div class="mr"><span>${WD[d.getDay()].slice(0,3)} ${d.getDate()}</span><span>${rd(t.T)}</span><span>${rd(t.P)}</span><span>${rd(t.x)}</span><span>${off?"Day off":rs(money(t))}</span></div>`}).join("")||`<p class="empty">No classes this month.</p>`}
 function render(){
 $("dt").textContent=new Date().toLocaleDateString("en-GB",{weekday:"long",day:"numeric",month:"long"});
@@ -182,10 +183,10 @@ showEarn();$("tot").innerHTML=["P","T","U"].map(k=>`<div class="tile ${k}"><b>${
 $("week").innerHTML=[0,1,2,3,4,5,6].map(i=>{const d=addD(M,i);if(i===6&&!list(0,1,iso(d)).length&&!list(0,2,iso(d)).length)return "";return `<h2>${WD[d.getDay()]} <small>${d.getDate()} ${mo(d)}</small></h2>`+shift(d,1)+shift(d,2)}).join("");
 const L=S.cls.filter(c=>!c.dt).sort((a,b)=>a.d-b.d||a.sh-b.sh||span(a).st-span(b).st);
 const row=c=>{const x=span(c);return `<button class="item" data-edit="${c.id}"><span><b>${DAYS[c.d].slice(0,3)}, ${esc(c.co)} ${esc(c.cl)}</b><small>${fm(x.st)} – ${fm(x.en)} · ${TN[c.ty]}${c.ve?" · "+esc(c.ve):""}</small></span></button>`};
-$("list").innerHTML=L.length?[1,2].map(n=>{const g=L.filter(c=>c.sh==n),a=tm(S.set["s"+n]);return `<h3>Shift ${n} <span>${fm(a)} – ${fm(a+poff(+S.set.pps+1))}</span></h3>`+(g.length?g.map(row).join(""):`<p class="empty">No classes in this shift.</p>`)}).join(""):`<p class="empty">No classes yet. Tap Add class to start.</p>`;
+$("list").innerHTML=L.length?[1,2].map(n=>{const g=L.filter(c=>c.sh==n),a=tm(S.set["s"+n]);return `<h3>Shift ${n} <span>${fm(a)} – ${fm(tm(S.set["e"+n]))}</span></h3>`+(g.length?g.map(row).join(""):`<p class="empty">No classes in this shift.</p>`)}).join(""):`<p class="empty">No classes yet. Tap Add class to start.</p>`;
 const X=S.cls.filter(c=>c.dt).sort((a,b)=>a.dt<b.dt?-1:a.dt>b.dt?1:span(a).st-span(b).st);
-$("list2").innerHTML=X.length?`<h2>Extra classes on dates</h2>`+X.map(c=>{const x=span(c);return `<button class="item" data-edit="${c.id}"><span><b>${new Date(c.dt+"T00:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})}, ${esc(c.co)} ${esc(c.cl)}</b><small>${fm(x.st)} – ${fm(x.en)} · ${TN[c.ty]}${c.ve?" · "+esc(c.ve):""}</small></span></button>`}).join(""):"";
-$("s1").value=S.set.s1;$("s2").value=S.set.s2;$("pm").value=S.set.pm;$("pps").value=S.set.pps;$("l1").value=S.set.l1;$("kk").value=S.set.k;$("rtT").value=rate("T");$("rtP").value=rate("P");$("rtU").value=rate("U");monthR()}
+$("list2").innerHTML=X.length?`<h2>Extra classes on dates</h2>`+X.map(c=>{const x=span(c);return `<button class="item ex" data-edit="${c.id}"><span><b>${new Date(c.dt+"T00:00").toLocaleDateString("en-GB",{weekday:"short",day:"numeric",month:"short"})}, ${esc(c.co)} ${esc(c.cl)}</b><small>${fm(x.st)} – ${fm(x.en)} · ${TN[c.ty]}${c.ve?" · "+esc(c.ve):""}</small></span></button>`}).join(""):"";
+tmgr();$("rtT").value=rate("T");$("rtP").value=rate("P");$("rtU").value=rate("U");monthR()}
 function show(v){tab=v;["today","week","month","edit","set"].forEach(k=>$("v-"+k).hidden=k!==v);document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.v===v));window.scrollTo(0,0);render()}
 function seg(){document.querySelectorAll("#segrp button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.rp===F.rp));$("lbd").hidden=F.rp==="d";$("lbdt").hidden=F.rp!=="d";document.querySelectorAll("#segty button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.ty===F.ty));document.querySelectorAll("#segsh button").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.sh===+F.sh))}
 function openForm(id,dt){editing=id;const c=S.cls.find(x=>x.id===id)||{d:cur.getDay()||1,dt:dt||"",sh:1,p:1,n:1,ty:"T",co:"",cl:"",ve:"",at:"",du:0};F={ty:c.ty,sh:c.sh,rp:c.dt?"d":"w"};$("fdt").value=c.dt||iso(cur);
@@ -201,6 +202,9 @@ if(b.dataset.date){cur=new Date(b.dataset.date+"T00:00");render()}
 if(b.dataset.wk!==undefined){cur=b.dataset.wk==="0"?sod(new Date()):addD(cur,7*+b.dataset.wk);render()}
 if(b.hasAttribute("data-adddate"))openForm(null,iso(cur));
 if(b.hasAttribute("data-off")){S.off=S.off||{};const k=iso(cur);if(S.off[k])delete S.off[k];else S.off[k]=1;save();render()}
+if(b.dataset.fill){const sh=b.dataset.fill,v=Math.round(+$("fill"+sh).value);if(v>=5){S.pl[sh]=S.pl[sh].map(()=>v);save();render()}}
+if(b.dataset.addp){const a=S.pl[b.dataset.addp];if(a.length<14){a.push(a[a.length-1]||45);save();render()}}
+if(b.dataset.rmp){const a=S.pl[b.dataset.rmp];if(a.length>1){a.pop();save();render()}}
 if(b.dataset.mo!==undefined){mcur=b.dataset.mo==="0"?new Date(cur.getFullYear(),cur.getMonth(),1):new Date(mcur.getFullYear(),mcur.getMonth()+ +b.dataset.mo,1);render()}
 if(b.dataset.rp){F.rp=b.dataset.rp;seg()}
 if(b.dataset.edit)openForm(b.dataset.edit);
@@ -212,7 +216,7 @@ const o={d:rp?new Date(dt+"T00:00").getDay():+$("fd").value,dt:rp?dt:"",sh:F.sh,
 if(editing){Object.assign(S.cls.find(c=>c.id===editing),o)}else{o.id="c"+Date.now().toString(36);S.cls.push(o)}
 cur=rp?new Date(dt+"T00:00"):addD(mon(cur),(o.d+6)%7);save();closeForm();render()};
 $("del").onclick=()=>{S.cls=S.cls.filter(c=>c.id!==editing);save();closeForm();render()};
-["s1","s2","pm","pps","l1","kk"].forEach(k=>$(k).onchange=()=>{const v=$(k).value;if(!v)return;const key=k==="kk"?"k":k;S.set[key]=(k==="s1"||k==="s2")?v:Math.max(k==="kk"?0:1,+v);save();render()});
+$("tmgr").onchange=e=>{const t=e.target,v=t.value;if(t.dataset.t){if(!v)return;S.set[t.dataset.t]=v}else if(t.dataset.pl){const a=t.dataset.pl.split(":");S.pl[a[0]][+a[1]]=Math.max(5,Math.round(+v)||5)}else return;save();render()};
 ["T","P","U"].forEach(k=>$("rt"+k).onchange=()=>{S.set["r"+k]=Math.max(0,+$("rt"+k).value||0);save();render()});
 $("print").onclick=$("printm").onclick=()=>{document.querySelectorAll("section").forEach(x=>x.classList.toggle("pr",!x.hidden));window.print()};
 $("mk").onclick=()=>{$("bk").value=JSON.stringify(S)};
